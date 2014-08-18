@@ -1,4 +1,4 @@
 Pong
 ====
 
-Pong implemented on the LÖVE Engine
+Pong implemented on the LÖVE Engine.
