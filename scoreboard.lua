@@ -11,7 +11,7 @@ function Scoreboard.create(x, y)
 	self.x = x
 	self.y = y
 
-	print("Created Scoreboard at " .. self.x .. ", " .. self.y) --!
+	print("Created scoreboard at " .. self.x .. ", " .. self.y) --!
 	return self
 end
 

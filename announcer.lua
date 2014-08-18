@@ -11,7 +11,7 @@ function Announcer.create(x, y)
 	self.x = x
 	self.y = y
 
-	print("Created Announcer at " .. self.x .. ", " .. self.y) --!
+	print("Created announcer at " .. self.x .. ", " .. self.y) --!
 	return self
 end
 
@@ -22,6 +22,5 @@ function Announcer:draw(player, score)
 	elseif player == 2 then
 		announcement = "Player 2 wins with " .. score .. " points!"
 	end
-	print(announcement) --!
 	love.graphics.print(announcement, self.x, self.y)
 end
