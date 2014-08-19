@@ -86,11 +86,7 @@ function love.keypressed(key)
 	elseif GAME_ACTIVE == false and key == 'n' then
 		love.event.quit()
 	elseif GAME_ACTIVE == false and key == 'y' then
-		GAME_ACTIVE = true
-		STATE = 'play'
-		SCORE_PLAYER_1 = 0
-		SCORE_PLAYER_2 = 0
-		love.load()
+		resetGame()
 	end
 end
 
@@ -99,4 +95,12 @@ function checkScore()
 	or SCORE_PLAYER_2 == WINNING_SCORE then
 		GAME_ACTIVE = false
 	end
+end
+
+function resetGame()
+	GAME_ACTIVE = true
+	STATE = 'play'
+	SCORE_PLAYER_1 = 0
+	SCORE_PLAYER_2 = 0
+	love.load()
 end
