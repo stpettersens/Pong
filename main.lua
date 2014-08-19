@@ -6,6 +6,7 @@ require 'ball'
 require 'paddle'
 require 'scoreboard'
 require 'announcer'
+require 'screentip'
 
 TITLE = "Pong"
 SCREEN_WIDTH = 700
@@ -24,8 +25,9 @@ function love.load()
 	ball = Ball.create(SCREEN_WIDTH / 2 , 250, SCREEN_WIDTH, SCREEN_HEIGHT)
 	paddle1 = Paddle.create(1, 15, SCREEN_HEIGHT, 'w', 's')
 	paddle2 = Paddle.create(2, (SCREEN_WIDTH - 35), SCREEN_HEIGHT, 'up', 'down')
-	scoreboard = Scoreboard.create((SCREEN_WIDTH / 2), 25)
-	announcer = Announcer.create((SCREEN_WIDTH / 2), 150)
+	scoreboard = Scoreboard.create(((SCREEN_WIDTH / 2) - 20), 25)
+	announcer = Announcer.create(((SCREEN_WIDTH / 2) - 45), 130)
+	screentip = Screentip.create(((SCREEN_WIDTH / 2) - 30), 200)
 end
 
 function love.update(dt)
@@ -54,27 +56,39 @@ function love.draw()
 		scoreboard:draw(SCORE_PLAYER_1, SCORE_PLAYER_2)
 	else
 		local player = 0
-		local score = 0
+		local score1 = 0
+		local score2 = 0
 		if SCORE_PLAYER_1 > SCORE_PLAYER_2 then
 			player = 1
-			score = SCORE_PLAYER_1
-
+			score1 = SCORE_PLAYER_1
+			score2 = SCORE_PLAYER_2
 		elseif SCORE_PLAYER_2 > SCORE_PLAYER_1 then
 			player = 2
-			score = SCORE_PLAYER_2
+			score1 = SCORE_PLAYER_2
+			score2 = SCORE_PLAYER_1
 		end
-		announcer:draw(player, score)
+		announcer:draw(player, score1, score2)
+		screentip:draw("Play again?", "(Y) Yes\t\t\t(N) No")
+	end
+	if STATE == 'pause' then
+		screentip:draw("PAUSED", "Press P to resume play")
 	end
 end
 
 
 function love.keypressed(key)
-	if key == 'p' then
+	if GAME_ACTIVE and key == 'p' then
 		if STATE == 'play' then
 			STATE = 'pause'
 		else
 			STATE = 'play'
 		end
+	elseif GAME_ACTIVE == false and key == 'n' then
+		love.event.quit()
+	elseif GAME_ACTIVE == false and key == 'y' then
+		GAME_ACTIVE = true
+		STATE = 'play'
+		--! TODO
 	end
 end
 
