@@ -88,7 +88,9 @@ function love.keypressed(key)
 	elseif GAME_ACTIVE == false and key == 'y' then
 		GAME_ACTIVE = true
 		STATE = 'play'
-		--! TODO
+		SCORE_PLAYER_1 = 0
+		SCORE_PLAYER_2 = 0
+		love.load()
 	end
 end
 
