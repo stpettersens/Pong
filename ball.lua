@@ -19,10 +19,19 @@ function Ball.create(x, y, screen_width, screen_height)
 
 	self.speed_x = -200
 	self.speed_y = 200
+	self.speed = 200
 	self.color = {255, 255, 255}
+	self.dir_x = 0
+	self.dir_y = 0
 
 	print("Created ball at " .. self.x .. ", " .. self.y) --!
 	return self
+end
+
+function Ball:setDirection(x, y)
+	local len = math.sqrt((x * x) + (y * y))
+	self.dir_x = 200 * (x / len)
+	self.dir_y = 200 * (y / len)
 end
 
 function Ball:scoreA()
@@ -60,6 +69,7 @@ function Ball:hitA(paddle)
 	if self.x <= paddle.width and (self.y + self.height) >= paddle.y
 	and self.y < (paddle.y + paddle.height) then
 		self.speed_x = math.abs(self.speed_x)
+		Ball:setDirection(-1, -1)
 		Ball:playHit()
 	end
 end
@@ -69,6 +79,7 @@ function Ball:hitB(paddle)
 	(self.y + self.height) >= paddle.y 
 	and self.y < (paddle.y + paddle.height) then
 		self.speed_x = -math.abs(self.speed_x)
+		Ball:setDirection(1, -1)
 		Ball:playHit()
 	end
 end
@@ -76,6 +87,8 @@ end
 function Ball:update(dt)
 	self.x = self.x + (self.speed_x * dt)
 	self.y = self.y + (self.speed_y * dt)
+	--self.x = self.dir_x * dt
+	--self.y = self.dir_y * dt
 end
 
 function Ball:draw()
