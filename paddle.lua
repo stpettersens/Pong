@@ -42,3 +42,11 @@ function Paddle:draw()
 	love.graphics.setColor(self.color)
 	love.graphics.rectangle('fill', self.x, self.y, self.width, self.height)
 end
+
+function Paddle:getPosStr()
+	return tostring('P' .. self.id .. ' '.. self.x .. ',' .. self.y)
+end
+
+function Paddle:setPos(position)
+	self.x, self.y = position
+end

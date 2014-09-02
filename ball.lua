@@ -87,11 +87,17 @@ end
 function Ball:update(dt)
 	self.x = self.x + (self.speed_x * dt)
 	self.y = self.y + (self.speed_y * dt)
-	--self.x = self.dir_x * dt
-	--self.y = self.dir_y * dt
 end
 
 function Ball:draw()
 	love.graphics.setColor(self.color)
 	love.graphics.rectangle('fill', self.x, self.y, self.width, self.height)
+end
+
+function Ball:getPosStr()
+	return tostring('B ' .. self.x .. ',' .. self.y .. ':')
+end
+
+function Ball:setPos(position)
+	self.x, self.y = position
 end

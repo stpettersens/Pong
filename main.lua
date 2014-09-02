@@ -5,6 +5,7 @@
 require 'ball'
 require 'paddle'
 require 'ai'
+require 'net-client'
 require 'scoreboard'
 require 'announcer'
 require 'screentip'
@@ -23,6 +24,9 @@ PLAY_AI = true
 GAME_READY = true
 GAME_ACTIVE = false
 STATE = 'play'
+
+HOST = "localhost"
+PORT = 8989
 
 function love.load()
 
