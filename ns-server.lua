@@ -1,4 +1,4 @@
--- NetSocket test!
+-- Net Server test!
 
 require 'net-server'
 require 'paddle'

@@ -24,7 +24,7 @@ function Ball.create(x, y, screen_width, screen_height)
 	self.dir_x = 0
 	self.dir_y = 0
 
-	print("Created ball at " .. self.x .. ", " .. self.y) --!
+	print(string.format("Created ball at %d,%d", self.x, self.y)) --!
 	return self
 end
 
@@ -95,9 +95,11 @@ function Ball:draw()
 end
 
 function Ball:getPosStr()
-	return tostring('B ' .. self.x .. ',' .. self.y .. ':')
+	return string.format("B %d,%d", self.x, self.y)
 end
 
 function Ball:setPos(position)
-	self.x, self.y = position
+	local x, y = position:match("([^,]+),([^,]+)")
+	self.x, self.y = tonumber(x), tonumber(y)
+	print(string.format("Set ball position at %d,%d", self.x, self.y)) -- !
 end

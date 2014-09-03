@@ -19,7 +19,7 @@ function AI.create(id, x, screen_width, screen_height)
 	self.speed = 195
 	self.color = {255, 255, 255}
 
-	print("Created AI paddle " .. self.id .. " at " .. self.x .. ", " .. self.y) --!
+	print(string.format("Created AI paddle %d at %d,%d", self.id, self.x, self.y)) --!
 	return self
 end
 

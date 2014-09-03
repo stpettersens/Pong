@@ -1,4 +1,4 @@
--- Pong game
+-- Pong game+
 -- Copyright (c) 2014 Sam Saint-Pettersen
 -- Powered by LÖVE Game Engine
 
@@ -19,7 +19,7 @@ function Paddle.create(id, x, screen_height, up, down)
 	
 	self.speed = 400
 	self.color = {255, 255, 255}
-	print("Created paddle " .. self.id .. " at " .. self.x .. ", " .. self.y) --!
+	print(string.format("Created paddle %d at %d,%d", self.id, self.x, self.y)) --!
 	return self
 end
 
@@ -44,9 +44,5 @@ function Paddle:draw()
 end
 
 function Paddle:getPosStr()
-	return tostring('P' .. self.id .. ' '.. self.x .. ',' .. self.y)
-end
-
-function Paddle:setPos(position)
-	self.x, self.y = position
+	return string.format("P%d %d,%d", self.id, self.x, self.y)
 end

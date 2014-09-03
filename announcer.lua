@@ -11,7 +11,7 @@ function Announcer.create(x, y)
 	self.x = x
 	self.y = y
 
-	print("Created announcer at " .. self.x .. ", " .. self.y) --!
+	print(string.format("Created announcer at %d,%d", self.x, self.y)) --!
 	return self
 end
 

@@ -11,7 +11,7 @@ function Screentip.create(x, y)
 	self.x = x
 	self.y = y
 
-	print("Created screentip at " .. self.x .. ", " .. self.y) --!
+	print(string.format("Created screentip at %d,%d", self.x, self.y)) --!
 	return self
 end
 
