@@ -41,5 +41,7 @@ end
 function NetPaddle:setPos(position)
 	local x, y = position:match("([^,]+),([^,]+)")
 	self.x, self.y = tonumber(x), tonumber(y)
+	print(self.x)
+	print(self.y)
 	--print(string.format("Set net paddle %s position at %d,%d", self.id, self.x, self.y)) -- !
 end
