@@ -60,7 +60,7 @@ function NetServer:listen()
 					self.udp:sendto(string.format("%d,%d", self.paddle1_posX, self.paddle1_posY), msg_or_ip, port_or_nil)
 				elseif param1 == "P2" then
 					self.paddle2_posX, self.paddle2_posY = tonumber(x), tonumber(y)
-					print(string.format("POS P2 %d,%d", self.paddle2_posX, self.paddle2_posY))
+					--print(string.format("POS P2 %d,%d", self.paddle2_posX, self.paddle2_posY))
 					self.udp:sendto(string.format("%d,%d", self.paddle2_posX, self.paddle2_posY), msg_or_ip, port_or_nil)
 				else
 					self.ball_posX, self.ball_posY = tonumber(x), tonumber(y)

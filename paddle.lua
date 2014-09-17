@@ -46,3 +46,11 @@ end
 function Paddle:getPosStr()
 	return string.format("P%d %d,%d", self.id, self.x, self.y)
 end
+
+function Paddle:setPos(position)
+	local x, y = position:match("([^,]+),([^,]+)")
+	self.x, self.y = tonumber(x), tonumber(y)
+	print(self.x)
+	print(self.y)
+end
+

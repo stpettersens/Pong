@@ -21,8 +21,9 @@ function NetPaddle.create(id, x, screen_height)
 	return self
 end
 
-function NetPaddle:update(dt, x, y)
-	self.x, self.y = x, y
+function NetPaddle:update(dt, y)
+	local dy = self.speed * dt
+	self.y = y - dt
 end
 
 function NetPaddle:draw()
@@ -35,13 +36,12 @@ function NetPaddle:getPosStr()
 end
 
 function NetPaddle:getPos()
-	return self.x, self.y
+	return self.y
 end
 
 function NetPaddle:setPos(position)
 	local x, y = position:match("([^,]+),([^,]+)")
 	self.x, self.y = tonumber(x), tonumber(y)
-	print(self.x)
-	print(self.y)
-	--print(string.format("Set net paddle %s position at %d,%d", self.id, self.x, self.y)) -- !
+	--print(self.x) -- ! 
+	--print(self.y) -- !
 end

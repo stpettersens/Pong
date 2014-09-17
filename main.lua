@@ -11,9 +11,9 @@ require 'scoreboard'
 require 'announcer'
 require 'screentip'
 
-HOST = 2
+HOST = 1
 
-TITLE = "Pong"
+TITLE = "Pong 1"
 SCREEN_WIDTH = 700
 SCREEN_HEIGHT = 500
 WINNING_SCORE = 10
@@ -36,9 +36,6 @@ function love.load()
 
 	love.window.setTitle(TITLE)
 	love.window.setMode(SCREEN_WIDTH, SCREEN_HEIGHT)
-
-	--paddle1 = Paddle.create(1, 15, SCREEN_HEIGHT, 'w', 's')
-	--paddle2 = Paddle.create(2, (SCREEN_WIDTH - 35), SCREEN_HEIGHT, 'up', 'down')
 
 	ball = Ball.create(SCREEN_WIDTH / 2 , 250, SCREEN_WIDTH, SCREEN_HEIGHT)
 
@@ -98,19 +95,15 @@ function love.update(dt)
 			if HOST == 1 then
 				paddle1:update(dt)
 				client:transmitPaddle(paddle1)
-				netPaddle1:setPos(client:receive())
-				--local x, y = netPaddle1:getPos()
-				--print("X1: " .. x)
-				--print("Y1: " .. y)
-				netPaddle1:update(dt, x, y)
+				--netPaddle1:setPos(client:receive())
+				local y = netPaddle1:getPos()
+				netPaddle1:update(dt, y)
 			else
 				paddle2:update(dt)
 				client:transmitPaddle(paddle2)
-				netPaddle2:setPos(client:receive())
-				--local x, y = netPaddle2:getPos()
-				--print("X2: " .. x)
-				--print("Y2: " .. y)
-				netPaddle2:update(dt, x, y)
+				--netPaddle2:setPos(client:receive())
+				local y = netPaddle2:getPos()
+				netPaddle2:update(dt, y)
 			end
 			--setNetworkScore()
 		end
@@ -148,6 +141,7 @@ function love.draw()
 			else
 				paddle2:draw()
 				netPaddle1:draw()
+				print(netPaddle1:getPos()) --!
 			end
 		end
 		
