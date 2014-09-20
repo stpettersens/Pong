@@ -13,7 +13,7 @@ require 'screentip'
 
 HOST = 1
 
-TITLE = "Pong 1"
+TITLE = "Pong"
 SCREEN_WIDTH = 700
 SCREEN_HEIGHT = 500
 WINNING_SCORE = 10

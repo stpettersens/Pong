@@ -10,11 +10,12 @@
 
 		{ "echo": "Building LOVE Game File for Pong..." },
 		{ "exec": "7z a -tzip Pong.love main.lua ball.lua 
-		paddle.lua ai.lua scoreboard.lua announcer.lua screentip.lua sfx" }
+		paddle.lua ai.lua net-paddle.lua net-client.lua scoreboard.lua announcer.lua screentip.lua sfx" }
 	],
 	
 	"clean": [
 
 		{ "erase": "Pong.love" }
 	]
+
 }
