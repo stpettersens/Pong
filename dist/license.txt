@@ -1,6 +1,6 @@
 Pong 
 Version 1.0 
-Built on LÃ–VE Engine
+Built on LÖVE Engine
 
 Copyright (c) 2014 Sam Saint-Pettersen, under MIT/X11 License:
 
@@ -14,29 +14,31 @@ furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
 
-Pong (from LÃ–VE) also uses the following libraries:
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Pong (from LÖVE) also uses the following libraries:
 
  - libmpg123 (LGPL-3.0)
      Website: http://www.mpg123.de/
      Source download: http://sourceforge.net/projects/mpg123/files/latest/download
+     
+     
  - OpenAL (LGPL-3.0)
      Website: http://connect.creativelabs.com/openal/default.aspx
      Source download: http://connect.creativelabs.com/openal/Downloads/openal-soft-1.13.tbz2
+     
+     
  - DevIL (LGPL-3.0)
      Website: http://openil.sourceforge.net/
      Source download: http://downloads.sourceforge.net/openil/DevIL-1.7.8.tar.gz
 
- - Lua 5.1 (MIT/X11 License)
- 	Website: http://www.lua.org
- 	Source download: http://www.lua.org/download.html
+
+- Lua 5.1 (MIT/X11 License)
+    Website: http://www.lua.org
+    Source download: http://www.lua.org/download.html
+
 
 LGPL-3.0: http://opensource.org/licenses/lgpl-3.0.html
 MIT/X11 License: http://opensource.org/licenses/MIT
