@@ -55,7 +55,7 @@ function love.load()
 end
 
 function playHumanNetwork()
-	PLAYER_1 = "p1"
+	PLAYER_1 = "P1"
 	PLAYER_2 = "P2"
 
 	client = NetClient.create(HOSTNAME, PORT)
@@ -215,15 +215,15 @@ function checkScore()
 end
 
 function announceGameOver()
-	local player = 0
+	local player = ""
 	local score1 = 0
 	local score2 = 0
 	if SCORE_PLAYER_1 > SCORE_PLAYER_2 then
-		player = 1
+		player = PLAYER_1
 		score1 = SCORE_PLAYER_1
 		score2 = SCORE_PLAYER_2
 	elseif SCORE_PLAYER_2 > SCORE_PLAYER_1 then
-		player = 2
+		player = PLAYER_2
 		score1 = SCORE_PLAYER_2
 		score2 = SCORE_PLAYER_1
 	end

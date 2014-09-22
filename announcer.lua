@@ -16,12 +16,7 @@ function Announcer.create(x, y)
 end
 
 function Announcer:draw(player, score1, score2)
-	local announcement = "blah"
-	if player == 1 then
-		announcement = "PLAYER 1 wins " .. score1 .. " points to " .. score2 .. "!"
-	elseif player == 2 then
-		announcement = "PLAYER 2 wins " .. score1 .. " points to " .. score2 .. "!"
-	end
+	local announcement = string.format("%s wins %d points to %d!", player, score1, score2)
 	love.graphics.print("GAME OVER", self.x, self.y)
-	love.graphics.print(announcement, (self.x - 50), (self.y + 20))
+	love.graphics.print(announcement, (self.x - 30), (self.y + 20))
 end

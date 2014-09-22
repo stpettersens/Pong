@@ -19,6 +19,6 @@ function Scoreboard.create(player1, player2, x, y)
 end
 
 function Scoreboard:draw(score1, score2)
-	local scores = self.player1 .. " \t" .. score1 .. " - " .. score2 .. " \t" .. self.player2
+	local scores = string.format("%s \t%d - %d \t %s", self.player1, score1, score2, self.player2) 
 	love.graphics.print(scores, self.x, self.y)
 end

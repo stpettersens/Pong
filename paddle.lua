@@ -1,4 +1,4 @@
--- Pong game+
+-- Pong game
 -- Copyright (c) 2014 Sam Saint-Pettersen
 -- Powered by LÖVE Game Engine
 
@@ -53,4 +53,3 @@ function Paddle:setPos(position)
 	print(self.x)
 	print(self.y)
 end
-
