@@ -1,0 +1,2 @@
+language: lua
+script: rake travis
