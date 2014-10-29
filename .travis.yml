@@ -1,2 +1,2 @@
-language: lua
+language: ruby
 script: rake travis
