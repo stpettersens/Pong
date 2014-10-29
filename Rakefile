@@ -9,7 +9,7 @@ task :deps do
 	puts "Installing 7-Zip..."
 	sh "sudo apt-get install p7zip-full"
 	puts "Installing LOVE engine..."
-	sh "sudo apt-get install liblove love"
+	sh "sudo apt-get install love"
 end
 
 task :build do
