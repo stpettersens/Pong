@@ -35,8 +35,8 @@ Pong (from LÖVE) also uses the following libraries:
      Source download: http://downloads.sourceforge.net/openil/DevIL-1.7.8.tar.gz
 
  - Lua 5.1 (MIT/X11 License)
- 	Website: http://www.lua.org
- 	Source download: http://www.lua.org/download.html
+     Website: http://www.lua.org
+     Source download: http://www.lua.org/download.html
 
 LGPL-3.0: http://opensource.org/licenses/lgpl-3.0.html
 MIT/X11 License: http://opensource.org/licenses/MIT
