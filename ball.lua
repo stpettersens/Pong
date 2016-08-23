@@ -19,7 +19,6 @@ function Ball.create(x, y, screen_width, screen_height)
 
 	self.speed_x = -200
 	self.speed_y = 200
-	self.speed = 200
 	self.color = {255, 255, 255}
 	self.dir_x = 0
 	self.dir_y = 0
